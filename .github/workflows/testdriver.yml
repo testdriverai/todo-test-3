@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: testdriverai/action@yassine/set-agent-version
         with:
-          version: v4.0.7
+          version: v4.0.10
           key: ${{secrets.TESTDRIVER_API_KEY}}
           prompt: |
             1. /run /Users/ec2-user/actions-runner/_work/testdriver/testdriver/testdriver/test.yml
