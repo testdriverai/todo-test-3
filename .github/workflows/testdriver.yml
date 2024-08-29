@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: testdriverai/action@main
         with:
-          version: v4.0.0
+          testdriveraiVersion: v4.0.0
           key: ${{secrets.TESTDRIVER_API_KEY}}
           prompt: |
             1. /run /Users/ec2-user/actions-runner/_work/testdriver/testdriver/testdriver/test.yml
