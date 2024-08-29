@@ -17,7 +17,7 @@ jobs:
           version: v4.0.10
           key: ${{secrets.TESTDRIVER_API_KEY}}
           prompt: |
-            1. /run testdriver/test.yml
+            1. /run testdriver\test.yml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           FORCE_COLOR: "3"
