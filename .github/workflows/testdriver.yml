@@ -13,6 +13,7 @@ jobs:
     steps:
       - uses: testdriverai/action@yassine/set-agent-version
         with:
+          version: v4.0.x
           testdriveraiVersion: v4.0.0
           key: ${{secrets.TESTDRIVER_API_KEY}}
           prompt: |
