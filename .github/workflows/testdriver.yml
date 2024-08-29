@@ -11,7 +11,7 @@ jobs:
     name: "TestDriver"
     runs-on: ubuntu-latest
     steps:
-      - uses: testdriverai/agent@main
+      - uses: testdriverai/action@main
         version: v4.0.0
         key: ${{secrets.TESTDRIVER_API_KEY}}
         with:
