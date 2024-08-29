@@ -11,10 +11,10 @@ jobs:
     name: "TestDriver"
     runs-on: ubuntu-latest
     steps:
-      - uses: testdriverai/action@yassine/set-agent-version
+      - uses: testdriverai/action@main
         with:
-          version: v4.0.x
-          testdriveraiVersion: v4.0.0
+          testdriveraiVersion: v4.0.9
+          version: v4.0.10
           key: ${{secrets.TESTDRIVER_API_KEY}}
           prompt: |
             1. /run /Users/ec2-user/actions-runner/_work/testdriver/testdriver/testdriver/test.yml
