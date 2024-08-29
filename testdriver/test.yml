@@ -1,0 +1,30 @@
+version: 4.0.7
+steps:
+  - prompt: click new task
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: hover-text
+        text: New Task
+        description: button to create a new task
+        action: click
+  - prompt: enter a fake task title and summary then click create task
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: hover-text
+        text: Title
+        description: Title field in the new task form
+        action: click
+      - command: type
+        text: Fake Task Title
+      - command: hover-text
+        text: Summary
+        description: Summary field in the new task form
+        action: click
+      - command: type
+        text: This is a fake task summary.
+      - command: hover-text
+        text: Create Task
+        description: button to create the task
+        action: click
