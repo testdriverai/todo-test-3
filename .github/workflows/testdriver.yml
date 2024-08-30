@@ -13,7 +13,6 @@ jobs:
     steps:
       - uses: testdriverai/action@main
         with:
-          testdriveraiVersion: v4.0.9
           version: v4.0.10
           key: ${{secrets.TESTDRIVER_API_KEY}}
           prompt: |
