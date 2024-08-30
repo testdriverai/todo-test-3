@@ -11,12 +11,20 @@ jobs:
     name: "TestDriver"
     runs-on: ubuntu-latest
     steps:
-      - uses: testdriverai/action@yassine/set-agent-version
+      - uses: testdriverai/action@main
         with:
           version: v4.0.10
           key: ${{secrets.TESTDRIVER_API_KEY}}
           prompt: |
-            1. /run /Users/ec2-user/actions-runner/_work/testdriver/testdriver/testdriver/test.yml
+            1. navigate to ${{ env.WEBSITE_URL }} in google chrome
+            2. /run testdriver\test.yml
+          prerun: |
+            cd $env:TEMP
+            npm init -y
+            npm install dashcam-chrome
+            Start-Process "C:/Program Files/Google/Chrome/Application/chrome.exe" -ArgumentList "--start-maximized","--load-extension=$(pwd)/node_modules/dashcam-chrome/build","${{ env.WEBSITE_URL }}"
+            exit
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           FORCE_COLOR: "3"
+          WEBSITE_URL: "https://testdriverai.github.io/example-react-todo" # Add your specific website URL here
