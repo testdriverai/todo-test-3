@@ -16,7 +16,8 @@ jobs:
           version: v4.0.10
           key: ${{secrets.TESTDRIVER_API_KEY}}
           prompt: |
-            1. /run testdriver\test.yml
+            1. navigate to ${{ env.WEBSITE_URL }} in google chrome
+            2. /run testdriver\test.yml
           prerun: |
             cd $env:TEMP
             npm init -y
