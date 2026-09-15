@@ -8,15 +8,21 @@ on:
 
 jobs:
   test:
-    name: "TestDriver"
+    name: "TestDriver E2E Tests"
     runs-on: ubuntu-latest
     steps:
-      - uses: testdriverai/action@yassine/set-agent-version
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          version: v4.0.10
-          key: ${{secrets.TESTDRIVER_API_KEY}}
-          prompt: |
-            1. /run /Users/ec2-user/actions-runner/_work/testdriver/testdriver/testdriver/test.yml
+          node-version: 20
+          cache: "npm"
+
+      - name: Install Dependencies
+        run: npm ci || npm install
+
+      - name: Run TestDriver Tests
+        run: npx vitest run
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          FORCE_COLOR: "3"
+          TD_API_KEY: ${{ secrets.TD_API_KEY || secrets.TESTDRIVER_API_KEY }}
