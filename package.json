@@ -1,0 +1,14 @@
+{
+  "name": "todo-test-3",
+  "version": "1.0.0",
+  "description": "TestDriver automated tests for React Todo App",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.7",
+    "testdriverai": "canary",
+    "vitest": "^2.1.8"
+  }
+}
